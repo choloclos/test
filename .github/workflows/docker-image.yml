@@ -1,0 +1,34 @@
+name: Build, Scan, Push
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'
+
+env:
+  SYSDIG_URL: https://us2.app.sysdig.com
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+  BYPASS_SCAN_FAIL: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Get the version (or use any other method)
+      id: get_version
+      run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+    
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.run_number }} --tag ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.get_version.outputs.VERSION }} --tag ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+    
+    - name: Log in to the Container registry
+      run: docker login -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }} ${{ env.REGISTRY }}
+    
+    - name: Push the Docker image
+      run: docker push -a ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
