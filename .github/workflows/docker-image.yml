@@ -25,7 +25,7 @@ jobs:
       run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
     
     - name: Build the Docker image
-      run: docker build . --file Dockerfile -t test
+      run: docker build . --file Dockerfile -t test -t ghcr.io/choloclos/test
     
     - name: Log in to the Container registry
       run: docker login -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }} ${{ env.REGISTRY }}
