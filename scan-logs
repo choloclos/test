@@ -1,0 +1,17 @@
+{"level":"info","time":"2022-09-28T14:44:24-04:00","message":"Inline scan version: 1.2.8-rc, commit: 50a3840"}
+{"level":"info","time":"2022-09-28T14:44:24-04:00","message":"Using path for the cache: /Users/maxrb/Library/Caches/inlineScannerCache.db"}
+{"level":"info","error":"file does not exist: stat /Users/maxrb/Downloads/ej/main.db.meta.json: no such file or directory","time":"2022-09-28T14:44:24-04:00","message":"error, overwrite current maindb"}
+{"level":"info","time":"2022-09-28T14:44:24-04:00","message":"Download a new mainDB to /Users/maxrb/Downloads/ej/main.db/sysdig-db-data"}
+{"level":"info","dbVersion":"V1","dbTimestamp":"2022-09-28T17:16:48Z","time":"2022-09-28T14:46:25-04:00","message":"DB downloaded"}
+{"level":"info","time":"2022-09-28T14:46:25-04:00","message":"Got updated DB file on path /Users/maxrb/Downloads/ej/main.db/sysdig-db-data: 110932505 bytes downloaded"}
+{"level":"info","time":"2022-09-28T14:46:25-04:00","message":"Reading mainDB from: /Users/maxrb/Downloads/ej/main.db/sysdig-db-data"}
+{"level":"info","time":"2022-09-28T14:46:26-04:00","message":"GET pkgMeta indexedAt on index changed from 0001-01-01 00:00:00 +0000 UTC to 2022-09-24 12:27:53 +0000 UTC on GetPkgMetaIndexedAt"}
+{"level":"info","time":"2022-09-28T14:46:26-04:00","message":"Getting image"}
+{"level":"warn","error":"error creating default store object: chown /Users/maxrb/.local/share/containers/storage/vfs: operation not permitted","time":"2022-09-28T14:46:26-04:00","message":"failed to create containers-storage loader, will continue without this image loader"}
+{"level":"info","imgName":"test","time":"2022-09-28T14:46:30-04:00","message":"Image retrieved"}
+{"level":"info","time":"2022-09-28T14:46:30-04:00","message":"Start analyzing image"}
+{"level":"info","time":"2022-09-28T14:46:30-04:00","message":"Start matching vulnerabilities"}
+{"level":"info","time":"2022-09-28T14:46:30-04:00","message":"Matched 85 OS packages and 440 nonOS packages"}
+{"level":"info","time":"2022-09-28T14:46:30-04:00","message":"Start policies evaluation"}
+{"level":"info","scan-result-id":"17191a9b34ddf6d1d0643339604d264a","scan-result-url":"https://us2.app.sysdig.com/secure/#/scanning/assets/results/17191a9b34ddf6d1d0643339604d264a/overview","time":"2022-09-28T14:46:31-04:00","message":"Scan Result uploaded"}
+{"level":"info","time":"2022-09-28T14:46:31-04:00","message":"Done"}
